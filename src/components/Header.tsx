@@ -73,7 +73,7 @@ const Header: React.FC = () => {
                     {/* Contact Us Button */}
                     <div className="hidden md:block">
                         <button
-                            onClick={() => handleScrollTo("Contact Us")}
+                            onClick={() => handleScrollTo("contact")}
                             className=" w-[145px] px-3 py-2 bg-primary font-semibold text-black rounded-[10px]"
                         >
                             Contact Us
