@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import mainLogo from '../assets/el-group-logo.svg'
 
 interface NavItem {
@@ -12,12 +12,12 @@ const navItems: NavItem[] = [
         label: "Home"
     },
     {
-        id: "about_us",
-        label: "About Us"
-    },
-    {
         id: "services",
         label: "Services"
+    },
+    {
+        id: "about_us",
+        label: "About Us"
     },
     {
         id: "projects",
@@ -29,12 +29,30 @@ const Header: React.FC = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState<string>("home");
 
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    },[])
+
     const handleScrollTo = (id: string) => {
+        console.log(id)
         setActiveSection(id);
         setIsMobileMenuOpen(false);
         const target = document.getElementById(id);
         if (target) {
-            target.scrollIntoView({ behavior: "smooth" });
+            const headerOffset = window.innerWidth >= 768 ? 91 : 73; // Adjust based on screen size
+            const targetPosition = target.offsetTop; // Element's position relative to the page
+            const scrollToPosition = targetPosition - headerOffset;
+    
+            // Only scroll if the target position is not already at the desired position
+            if (Math.abs(window.scrollY - scrollToPosition) > 1) {
+                window.scrollTo({
+                    top: scrollToPosition,
+                    behavior: "smooth",
+                });
+            }
         }
     };
 
@@ -115,7 +133,7 @@ const Header: React.FC = () => {
             </div>
 
             <div
-                className={`fixed top-16 right-0 px-3 py-5 w-full h-full bg-white transition-transform duration-500 ease-in-out transform ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"} z-50`}
+                className={`fixed top-16 sm:top-20 right-0 px-3 py-5 w-full h-full bg-white transition-transform duration-500 ease-in-out transform ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"} z-50`}
             >
                 <nav className="">
                     {[...navItems, { id: "contact", label: "Contact Us" }].map((nav: NavItem) => (

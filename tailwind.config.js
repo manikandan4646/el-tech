@@ -8,9 +8,17 @@ export default {
         extend: {
             colors: {
                 primary: '#FFD448',
+                secondary: '#FEF6E0'
             },
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],  // Adding Inter as default sans-serif font
+            },
+            screens: {
+                sm: '640px',  // Small screens
+                'min-sm': '749px',
+                md: '768px',  // Medium screens
+                lg: '1024px', // Large screens
+                'max-lg': '1395px',
             },
         },
     },
