@@ -54,7 +54,9 @@ const OurApproach = () => {
                                 ${index >= 3 ? "md:border-b-0" : "" /*Remove bottom border for the last row on medium screens*/}`
                             }
                         >
-                            <img src={x.Icon} alt="" />
+                            <div className="w-full flex justify-center">
+                                <img src={x.Icon} alt="" />
+                            </div>
                             <div className="text-[18px] semi-md:text-[20px] leading-6 font-semibold mt-5">{x.title}</div>
                             <div className="text-[14px] semi-md:text-[16px] max-w-[303px] mt-2 leading-[19px]">{x.description}</div>
                         </div>
