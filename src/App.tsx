@@ -1,27 +1,35 @@
+import AboutUs from "./components/AboutUs"
 import Header from "./components/Header"
+import KeyPoints from "./components/KeyPoints"
+import OurApproach from "./components/OurApproach"
 import OurServices from "./components/OurServices"
+import Projects from "./components/Projects"
 import Slider from "./components/Slider"
+import WeProvide from "./components/WeProvide"
 
 function App() {
     return (
         <div>
             <Header />
             <div className="mt-[73px] sm:mt-[91px]">
-                <div id="home" className="h-[calc(100vh-73px)] sm:h-[calc(100vh-91px)]">
+                <section id="home" className="h-[calc(100vh-73px)] sm:h-[calc(100vh-91px)]">
                     <Slider />
-                </div>
-                <div id="services" className="">
+                </section>
+                <section id="services">
                     <OurServices />
-                </div>
-                <div id="about_us" className="h-[calc(100vh-73px)] sm:h-[calc(100vh-91px)]">
-                    <h1>About div</h1>
-                </div>
-                <div id="projects" className="h-[calc(100vh-73px)] sm:h-[calc(100vh-91px)]">
-                    <h1>Projects div</h1>
-                </div>
-                <div id="contact" className="h-[calc(100vh-73px)] sm:h-[calc(100vh-91px)]">
-                    <h1>Contact div</h1>
-                </div>
+                </section>
+                <section id="about_us">
+                    <AboutUs />
+                    <OurApproach />
+                    <KeyPoints />
+                    <WeProvide />
+                </section>
+                <section id="projects">
+                    {/* <Projects /> */}
+                </section>
+                <section id="contact" className="h-[calc(100vh-73px)] sm:h-[calc(100vh-91px)]">
+                    <h1>Contact section</h1>
+                </section>
             </div>
         </div>
     )

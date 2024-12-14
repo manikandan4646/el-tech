@@ -40,5 +40,40 @@ body {
 .slider-scrollbar::-webkit-scrollbar {
     display: none;
 }
-
 /*  Home Slider Eds*/
+
+
+.about-us ul,
+.we-provide ul {
+    list-style: inside;
+}
+.about-us ol,
+.we-provide ol {
+    list-style: inside;
+    list-style-type: number;
+}
+
+li {
+    list-style-type: none;
+    display: block;
+    padding-left: 15px;
+}
+
+li::before{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    top: 9px;
+    left: 0;
+    background-color: black;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    }

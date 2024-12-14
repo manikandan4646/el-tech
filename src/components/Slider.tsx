@@ -27,7 +27,6 @@ const HomeBannerSlider: React.FC = () => {
     const sliderRef = useRef<HTMLDivElement>(null);
 
     const handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
-        console.log("inside")
         const slider = event.currentTarget;
         const currentIndex = Math.round(slider.scrollLeft / slider.offsetWidth);
         setActiveSlide(currentIndex);
@@ -69,9 +68,9 @@ const HomeBannerSlider: React.FC = () => {
                         />
                         {/* Content Overlay */}
 
-                        <div className="absolute inset-0 top-[-60px] bg-black bg-opacity-20 flex flex-col justify-center items-center font-sans text-white px-4">
-                            <h2 className="text-[64px] font-semibold mb-4 max-w-[770px] text-center leading-[75px]">{slide.heading}</h2>
-                            <p className="font-normal max-w-[615px] text-center leading-[19px]">{slide.description}</p>
+                        <div className="absolute inset-0 top-[-60px] bg-black bg-opacity-20 flex flex-col justify-center items-center font-sans text-white px-2 sm:px-4">
+                            <div className="text-[32px] sm:text-[50px] md:text-[64px] font-semibold mb-4 max-w-[770px] text-center leading-[45px] sm:leading-[55px] md:leading-[75px]">{slide.heading}</div>
+                            <p className="font-normal max-w-[615px] text-center leading-[19px] text-[14px] sm:text-[16px]">{slide.description}</p>
                         </div>
                     </div>
                 ))}
