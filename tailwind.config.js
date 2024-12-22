@@ -8,7 +8,8 @@ export default {
         extend: {
             colors: {
                 primary: '#FFD448',
-                secondary: '#FEF6E9'
+                secondary: '#FEF6E9',
+                'custom-gray': 'rgba(165, 159, 159, 1)',
             },
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],  // Adding Inter as default sans-serif font
@@ -20,6 +21,9 @@ export default {
                 'semi-md': '900px',
                 lg: '1024px', // Large screens
                 'max-lg': '1395px',
+            },
+            backgroundImage: {
+                'custom-gradient': 'linear-gradient(270deg, rgba(32, 27, 27, 0) 0%, rgba(32, 27, 27, 0.8) 100%)',
             },
         },
     },
