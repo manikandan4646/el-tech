@@ -1,4 +1,6 @@
 import AboutUs from "./components/AboutUs"
+import ContactUs from "./components/ContactUs"
+import Footer from "./components/Footer"
 import Header from "./components/Header"
 import KeyPoints from "./components/KeyPoints"
 import OurApproach from "./components/OurApproach"
@@ -9,7 +11,7 @@ import WeProvide from "./components/WeProvide"
 
 function App() {
     return (
-        <div>
+        <div className="bg-white">
             <Header />
             <div className="mt-[73px] sm:mt-[91px]">
                 <section id="home" className="h-[calc(100vh-73px)] sm:h-[calc(100vh-91px)]">
@@ -25,12 +27,13 @@ function App() {
                     <WeProvide />
                 </section>
                 <section id="projects">
-                    {/* <Projects /> */}
+                    <Projects />
                 </section>
-                <section id="contact" className="h-[calc(100vh-73px)] sm:h-[calc(100vh-91px)]">
-                    <h1>Contact section</h1>
+                <section id="contact">
+                    <ContactUs />
                 </section>
             </div>
+            <Footer />
         </div>
     )
 }

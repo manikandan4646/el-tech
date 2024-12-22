@@ -72,7 +72,7 @@ const Header: React.FC = () => {
                     </div>
 
                     {/* Desktop Navigation */}
-                    <nav className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-11">
+                    <nav className="hidden semi-md:flex absolute left-1/2 transform -translate-x-1/2 space-x-11">
                         {navItems.map((nav: NavItem) => (
                             <div key={nav.id} className="">
                                 <button
@@ -81,15 +81,12 @@ const Header: React.FC = () => {
                                 >
                                     {nav.label}
                                 </button>
-                                <div
-                                    className={`h-[1px] w-[3px] ${activeSection === nav.id ? "bg-primary" : "bg-black"}`}
-                                />
                             </div>
                         ))}
                     </nav>
 
                     {/* Contact Us Button */}
-                    <div className="hidden md:block">
+                    <div className="hidden semi-md:block">
                         <button
                             onClick={() => handleScrollTo("contact")}
                             className=" w-[145px] px-3 py-2 bg-primary font-semibold text-black rounded-[10px]"
@@ -99,7 +96,7 @@ const Header: React.FC = () => {
                     </div>
 
                     {/* Mobile Menu Toggle */}
-                    <div className="md:hidden">
+                    <div className="semi-md:hidden">
                         <button
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                             className="text-gray-700 hover:text-black focus:outline-none"
