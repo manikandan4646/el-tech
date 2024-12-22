@@ -5,6 +5,7 @@ import Header from "./components/Header"
 import KeyPoints from "./components/KeyPoints"
 import OurApproach from "./components/OurApproach"
 import OurServices from "./components/OurServices"
+import Projects from "./components/Projects"
 import Slider from "./components/Slider"
 import WeProvide from "./components/WeProvide"
 
