@@ -3,8 +3,20 @@ import supervisionImg from "../assets/supervision-service.png"
 import designImg from "../assets/design-service.png"
 import loanImg from "../assets/loan-service.png"
 import chevronIcon from "../assets/chevron-icon.svg"
+import { useState } from "react"
+import useIsMobile from "../hooks/useMobile"
 
 const OurServices = () => {
+
+    const [flippedCard, setFlippedCard] = useState<any>(null);
+    const mobile = useIsMobile();
+
+
+    const handleCardClick = (serviceName: any) => {
+        console.log("inside card")
+        setFlippedCard((prev: any) => (prev === serviceName ? null : serviceName)); // Toggle the card
+    };
+
     const services = [
         {
             name: "Construction",
@@ -30,35 +42,40 @@ const OurServices = () => {
                 <div className="text-center max-w-[700px] text-[14px] sm:text-[18px] leading-[25px] mt-2">We offer a comprehensive range of construction services designed to meet the unique needs of our clients. Our commitment to quality innovation and customer satisfaction drives us to deliver exceptional results on every project.</div>
             </div>
             <div className="grid grid-cols-12 place-items-center gap-y-8 sm:gap-y-14 my-10">
-                {
-                    services.map((service) => (
-                        <div className="group relative [perspective:1000px] col-span-12 min-sm:col-span-6 lg:col-span-6 max-lg:col-span-3" key={service.name}>
-                            <div
-                                className="relative w-[300px] h-[300px] sm:h-[402px] bg-black rounded-[32px] grid place-items-center transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
-                            >
-                                {/* Front Face */}
-                                <div className="absolute inset-0 flex flex-col overflow-hidden rounded-[30px] items-center justify-center [backface-visibility:hidden]">
-                                    <img src={service.img} alt="" />
-                                    <div className="absolute bottom-10 font-sans text-white">
-                                        <div className="text-[24px] sm:text-[28px] font-semibold">{service.name}</div>
-                                    </div>
-                                </div>
-
-                                {/* Back Face */}
-                                <div className="absolute inset-0 h-full w-full rounded-[30px] bg-black/80 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
-                                    <div className="flex min-h-full flex-col items-center justify-center">
-                                        <h2 className="text-2xl font-bold mb-4">{service.name}</h2>
-                                        <a href="tel:555-555-5555" className="inline-flex">
-                                            <button className="my-2 bg-yellow-800 hover:bg-yellow-700 text-white font-bold py-2 px-4 w-auto rounded-full inline-flex items-center">
-                                                <span>Schedule Service</span>
-                                            </button>
-                                        </a>
+                {services.map((service) => (
+                    <div
+                        className={`${mobile ? "" : "group"} relative [perspective:1000px] col-span-12 min-sm:col-span-6 lg:col-span-6 max-lg:col-span-3`}
+                        key={service.name}
+                        onClick={() => handleCardClick(service.name)}
+                    >
+                        <div
+                            className={`relative w-[300px] h-[300px] sm:h-[402px] bg-black rounded-[32px] grid place-items-center transition-all duration-500 [transform-style:preserve-3d] ${flippedCard === service.name ? "[transform:rotateY(180deg)]" : ""
+                                } group-hover:[transform:rotateY(180deg)]`} // Add hover for desktop
+                        >
+                            {/* Front Face */}
+                            <div className="absolute inset-0 flex flex-col overflow-hidden rounded-[30px] items-center justify-center [backface-visibility:hidden]">
+                                <img src={service.img} alt="" />
+                                <div className="absolute bottom-10 font-sans text-white">
+                                    <div className="text-[24px] sm:text-[28px] font-semibold">
+                                        {service.name}
                                     </div>
                                 </div>
                             </div>
+
+                            {/* Back Face */}
+                            <div className="absolute inset-0 h-full w-full rounded-[30px] bg-black/80 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                                <div className="flex min-h-full flex-col items-center justify-center">
+                                    <h2 className="text-2xl font-bold mb-4">{service.name}</h2>
+                                    <a href="tel:555-555-5555" className="inline-flex">
+                                        <button className="my-2 bg-yellow-800 hover:bg-yellow-700 text-white font-bold py-2 px-4 w-auto rounded-full inline-flex items-center">
+                                            <span>Schedule Service</span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    ))
-                }
+                    </div>
+                ))}
             </div>
             <div className="flex justify-center mt-14">
                 <div
