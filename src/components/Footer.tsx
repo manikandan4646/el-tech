@@ -48,22 +48,32 @@ const Footer = () => {
     };
 
     return (
-        <div className=' flex justify-center flex-col items-center mt-8 sm:mt-16 mb-5'>
-            <div className="">
+        <footer className=' flex justify-center flex-col items-center mt-8 sm:mt-16 mb-5'>
+            <div
+                className="text-center"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+            >
                 <img
                     src={mainLogo}
-                    alt="Logo"
+                    alt="EL-Tech Constructions Logo"
                     className="w-[150px] h-[32px] object-contain sm:w-[174px] sm:h-[38px]"
                 />
                 <div className="text-[11px] font-sans text-center font-semibold mt-[5px] sm:text-[13px] leading-[16px]">
                     EL-TECH CONSTRUCTIONS
                 </div>
             </div>
-            
-            <div className='hidden sm:flex gap-10 mt-8'>
+
+            <div
+                className='hidden sm:flex gap-10 mt-8'
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="200"
+            >
                 {
                     navItems.map((nav) => (
                         <button
+                            key={nav.id}
                             onClick={() => handleScrollTo(nav.id)}
                             className={`cursor-pointer font-sans hover:text-primary`}
                         >
@@ -73,17 +83,34 @@ const Footer = () => {
                 }
             </div>
 
-            <div className='flex gap-4 mt-6'>
-                <div>Follow Us:</div>
-                <img src={facebookIcon} alt="" />
-                <img src={twitterIcon} alt="" />
-                <img src={linkedinIcon} alt="" />
+            <div
+                className='flex gap-4 mt-6'
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="400"
+            >
+                <span className="text-sm sm:text-base">Follow Us:</span>
+                <img
+                    src={facebookIcon}
+                    alt="Facebook"
+                    className="cursor-pointer hover:opacity-50"
+                />
+                <img
+                    src={twitterIcon}
+                    alt="Twitter"
+                    className="cursor-pointer hover:opacity-50"
+                />
+                <img
+                    src={linkedinIcon}
+                    alt="LinkedIn"
+                    className="cursor-pointer hover:opacity-50"
+                />
             </div>
 
             <div className='my-6 w-[92%] border border-transparent border-b-custom-gray'></div>
 
             <div className='font-sans text-[14px] sm:text-[16px]'>Copyright@2023 by El-Tech Constructions</div>
-        </div>
+        </footer>
     )
 }
 

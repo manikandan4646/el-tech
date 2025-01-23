@@ -6,7 +6,7 @@
 
 
 body {
-    font-family: 'Inter';
+    @apply font-sans overflow-x-hidden;
 }
 
 /* Custom Scrollbar Starts*/
@@ -107,4 +107,43 @@ li::before{
     grid-row: span 3 / span 3;
     grid-column-start: 6;
     grid-row-start: 4;
+}
+
+.input-container{
+	position:relative;
+}
+.input-container .input-label{
+	position:absolute;
+	top:6px;
+	left:0px;
+	font-size:14px;	
+    font-weight: 500;
+    color: #8D8D8D;
+    pointer-events:none;
+	transition: all 0.3s ease-in-out;
+}
+.input-container .form-input{ 
+    border:0;
+    border-bottom:1px solid #8D8D8D;  
+    background:transparent;
+    width:100%;
+    padding:8px 0 3px 0;
+    font-size:16px;
+}
+.input-container .form-input:focus{ 
+    border:none;	
+    outline:none;
+    border-bottom:1px solid #111;	
+}
+
+.input-container .form-input:focus ~ .input-label,
+.input-container .form-input:not(:placeholder-shown) ~ .input-label {
+    top: -12px;
+    font-size: 12px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }

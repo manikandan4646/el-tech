@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Banner1 from "../assets/banner-1.png"
+import Banner2 from "../assets/banner-2.png"
+import Banner3 from "../assets/banner-3.png"
 
 const slides = [
     {
@@ -10,15 +12,15 @@ const slides = [
     },
     {
         id: 2,
-        image: Banner1,
-        heading: "Innovative Solutions",
-        description: "We bring innovative solutions to your doorstep.",
+        image: Banner2,
+        heading: "Constructing Excellence, Delivering Dreams",
+        description: "From concept to completion, we bring your vision to life with unmatched craftsmanship, innovative solutions, and a commitment to quality. Let's build something extraordinary together.",
     },
     {
         id: 3,
-        image: Banner1,
-        heading: "Join Us Today",
-        description: "Be part of a community that values excellence.",
+        image: Banner3,
+        heading: "Re-imagining Spaces, Redefining Comfort",
+        description: "Upgrade your home or office with our expert renovation services. We bring new life to old spaces while maintaining your unique style and needs.",
     },
 ];
 
@@ -41,7 +43,7 @@ const HomeBannerSlider: React.FC = () => {
         const interval = setInterval(() => {
             currentIndex = (currentIndex + 1) % slides.length; // Ensure circular scrolling
             slider.scrollTo({
-                left:  slider.offsetWidth * currentIndex,
+                left: slider.offsetWidth * currentIndex,
                 behavior: "smooth",
             });
         }, 5000); // 5 seconds interval
@@ -69,8 +71,19 @@ const HomeBannerSlider: React.FC = () => {
                         {/* Content Overlay */}
 
                         <div className="absolute inset-0 top-[-60px] bg-black bg-opacity-20 flex flex-col justify-center items-center font-sans text-white px-2 sm:px-4">
-                            <div className="text-[32px] sm:text-[50px] md:text-[64px] font-semibold mb-4 max-w-[770px] text-center leading-[45px] sm:leading-[55px] md:leading-[75px]">{slide.heading}</div>
-                            <p className="font-normal max-w-[615px] text-center leading-[19px] text-[14px] sm:text-[16px]">{slide.description}</p>
+                            <div
+                                data-aos="fade-up"
+                                className="opacity-0 text-[32px] sm:text-[50px] md:text-[64px] font-semibold mb-4 max-w-[800px] text-center leading-[45px] sm:leading-[55px] md:leading-[75px]"
+                            >
+                                {slide.heading}
+                            </div>
+                            <p
+                                data-aos="fade-up"
+                                data-aos-delay="200"
+                                className="opacity-0 font-normal max-w-[615px] text-center leading-[19px] text-[14px] sm:text-[16px]"
+                            >
+                                {slide.description}
+                            </p>
                         </div>
                     </div>
                 ))}

@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import AboutUs from "./components/AboutUs"
 import ContactUs from "./components/ContactUs"
 import Footer from "./components/Footer"
@@ -8,8 +9,19 @@ import OurServices from "./components/OurServices"
 import Projects from "./components/Projects"
 import Slider from "./components/Slider"
 import WeProvide from "./components/WeProvide"
+import Aos from "aos"
+import ContactPopup from "./components/ContactPopup"
 
 function App() {
+
+    useEffect(() => {
+        Aos.init({
+            duration: 800,
+            offset: 50, // Trigger animations earlier (default is 120px)
+            once: false,
+            easing: "ease-in-out",
+        });
+    }, []);
     return (
         <div className="bg-white">
             <Header />
@@ -29,11 +41,12 @@ function App() {
                 <section id="projects">
                     <Projects />
                 </section>
-                <section id="contact">
+                <section>
                     <ContactUs />
                 </section>
             </div>
             <Footer />
+            <ContactPopup />
         </div>
     )
 }

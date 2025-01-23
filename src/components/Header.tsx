@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import mainLogo from '../assets/el-group-logo.svg'
+import usePopupContext from "../hooks/usePopupContext";
 
 interface NavItem {
     id: string;
@@ -29,6 +30,8 @@ const Header: React.FC = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState<string>("home");
 
+    const { togglePopup } = usePopupContext();
+
     useEffect(() => {
         window.scrollTo({
             top: 0,
@@ -37,7 +40,6 @@ const Header: React.FC = () => {
     },[])
 
     const handleScrollTo = (id: string) => {
-        console.log(id)
         setActiveSection(id);
         setIsMobileMenuOpen(false);
         const target = document.getElementById(id);
@@ -60,7 +62,7 @@ const Header: React.FC = () => {
         <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
             <div className="mx-4 px-4 sm:px-8 lg:px-[58px]">
                 <div className="flex justify-between items-center py-[10px] sm:py-[16px]">
-                    <div className="">
+                    <div className="cursor-pointer" onClick={() => handleScrollTo("home")}>
                         <img
                             src={mainLogo}
                             alt="Logo"
@@ -88,7 +90,7 @@ const Header: React.FC = () => {
                     {/* Contact Us Button */}
                     <div className="hidden semi-md:block">
                         <button
-                            onClick={() => handleScrollTo("contact")}
+                            onClick={() => togglePopup()}
                             className=" w-[145px] px-3 py-2 bg-primary font-semibold text-black rounded-[10px]"
                         >
                             Contact Us
