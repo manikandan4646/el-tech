@@ -5,9 +5,8 @@ import MobileIcon from "../assets/mobile-icon.svg"
 import EmailIcon from "../assets/email-icon.svg"
 import PopupDesignImg from "../assets/popup-design.svg"
 import LocationIcon from "../assets/location-icon.svg"
-import CustomSelect from "./CustomSelect";
 
-const options = ["Option 1", "Option 2", "Option 3"];
+// const options = ["Option 1", "Option 2", "Option 3"];
 const ContactPopup = () => {
     const { isPopupOpen, togglePopup } = usePopupContext();
 

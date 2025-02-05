@@ -10,7 +10,6 @@ import Projects from "./components/Projects"
 import Slider from "./components/Slider"
 import WeProvide from "./components/WeProvide"
 import Aos from "aos"
-import ContactPopup from "./components/ContactPopup"
 
 function App() {
 
