@@ -5,7 +5,9 @@ import MobileIcon from "../assets/mobile-icon.svg"
 import EmailIcon from "../assets/email-icon.svg"
 import PopupDesignImg from "../assets/popup-design.svg"
 import LocationIcon from "../assets/location-icon.svg"
+import CustomSelect from "./CustomSelect";
 
+const options = ["Option 1", "Option 2", "Option 3"];
 const ContactPopup = () => {
     const { isPopupOpen, togglePopup } = usePopupContext();
 
@@ -13,9 +15,7 @@ const ContactPopup = () => {
         <PopUp show={isPopupOpen} onClose={() => togglePopup()}>
             <div className="grid grid-cols-12 gap-2">
                 <div
-                    className="relative col-span-5 bg-secondary rounded-lg p-4 flex flex-col items-center"
-                    data-aos="fade-right"
-                >
+                    className="relative col-span-5 bg-secondary rounded-lg p-4 flex flex-col items-center">
                     <div>
                         <div className="font-semibold text-[27px] mt-7">Ready to Start Your Project?</div>
                         <div className="mt-2">Write to us now!</div>
@@ -34,12 +34,12 @@ const ContactPopup = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="absolute bottom-0 right-0" data-aos="fade-up" data-aos-delay="800">
+                    <div className="absolute bottom-0 right-0">
                         <img src={PopupDesignImg} alt="" />
                     </div>
                 </div>
                 <div className="col-span-7 p-5 flex justify-center items-center">
-                    <div className="grid grid-cols-12 gap-x-10 w-full my-20" data-aos="fade-left">
+                    <div className="grid grid-cols-12 gap-x-10 w-full my-20">
                         <div className="col-span-6 mb-3">
                             <InputField
                                 name="firstName"

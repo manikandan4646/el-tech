@@ -46,7 +46,7 @@ function App() {
                 </section>
             </div>
             <Footer />
-            <ContactPopup />
+            {/* <ContactPopup /> */}
         </div>
     )
 }
