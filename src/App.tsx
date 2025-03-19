@@ -33,14 +33,14 @@ function App() {
                     <OurServices />
                 </section>
                 <section id="about_us">
-                    {/* <AboutUs /> */}
+                    <AboutUs />
                     <OurApproach />
                     <KeyPoints />
                     <WeProvide />
                 </section>
-                {/* <section id="projects">
+                <section id="projects">
                     <Projects />
-                </section> */}
+                </section>
                 <section>
                     <ContactUs />
                 </section>

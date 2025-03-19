@@ -21,7 +21,7 @@ const PopUp = ({
                 className="fixed inset-0 z-50 bg-black bg-opacity-50"
             />
 
-            <div className="fixed inset-0  z-50 flex items-center justify-center max-w-[70%] mx-auto">
+            <div className="fixed inset-0  z-50 flex items-center justify-center max-w-[90%] sm:max-w-[70%] mx-auto">
                 <div
                     className={`relative bg-white w-full border rounded-lg p-2 shadow-lg `}
                     ref={modalRef}
