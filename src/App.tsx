@@ -10,6 +10,7 @@ import Projects from "./components/Projects"
 import Slider from "./components/Slider"
 import WeProvide from "./components/WeProvide"
 import Aos from "aos"
+import ContactPopup from "./components/ContactPopup"
 
 function App() {
 
@@ -32,20 +33,20 @@ function App() {
                     <OurServices />
                 </section>
                 <section id="about_us">
-                    <AboutUs />
+                    {/* <AboutUs /> */}
                     <OurApproach />
                     <KeyPoints />
                     <WeProvide />
                 </section>
-                <section id="projects">
+                {/* <section id="projects">
                     <Projects />
-                </section>
+                </section> */}
                 <section>
                     <ContactUs />
                 </section>
             </div>
             <Footer />
-            {/* <ContactPopup /> */}
+            <ContactPopup />
         </div>
     )
 }

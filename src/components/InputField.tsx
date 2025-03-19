@@ -24,13 +24,22 @@ const InputField = ({
                         />
                         <label className="input-label" htmlFor={id}>{label}</label>
                     </div>
-
                 );
             }
-            case "select": {
+            case "email": {
                 return (
-                    <div className="container">
-                        
+                    <div className="input-container">
+                        <input
+                            className="form-input"
+                            onChange={onChange}
+                            name={name}
+                            placeholder=" "
+                            id={id}
+                            autoComplete="off"
+                            value={value}
+                            type="email"
+                        />
+                        <label className="input-label" htmlFor={id}>{label}</label>
                     </div>
                 );
             }
@@ -62,7 +71,7 @@ const InputField = ({
 
     return (
         <div
-            className="w-full py-3"
+            className="w-full mid-lg:py-3 py-2"
         >
             {
                 renderInput()

@@ -20,6 +20,7 @@ export default {
                 md: '768px',  // Medium screens
                 'semi-md': '900px',
                 lg: '1024px', // Large screens
+                "mid-lg": "1200px",
                 'max-lg': '1395px',
             },
             backgroundImage: {
