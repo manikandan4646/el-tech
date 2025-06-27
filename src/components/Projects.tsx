@@ -18,7 +18,7 @@ const Projects = () => {
                     <div
                         className="col-span-8 row-span-3 md:col-span-3 md:row-span-6"
                         data-aos="fade-right"
-                        data-aos-delay="100"
+                        data-aos-delay="100" 
                     >
                         <img src={Project1} className="w-full h-full object-cover" alt="Project 1" />
                     </div>
